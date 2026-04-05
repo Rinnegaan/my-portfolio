@@ -18,17 +18,49 @@ export default function About() {
 
         <div className="grid md:grid-cols-[1fr_1.2fr] gap-10 md:gap-16 items-start">
           
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-            className="relative rounded-[14px] overflow-hidden border border-glass-border aspect-4/3 group"
+            className="relative group select-none"
+            style={{ aspectRatio: "3/4", maxHeight: "520px" }}
           >
-            <img src="/ayush_profile.jpg" alt="Ayush Kumar" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#030408]/80"></div>
-            {/* Viewfinder corners */}
-            <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-accent-primary"></div>
-            <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-accent-primary"></div>
-            <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-accent-primary"></div>
-            <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-accent-primary"></div>
+            {/* The photo itself */}
+            <img
+              src="/ayush_profile.jpg"
+              alt="Ayush Kumar"
+              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              style={{ filter: "brightness(1.1) contrast(1.15) grayscale(1)" }}
+            />
+
+            {/* Cyan luminosity tint */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: "rgba(0,229,255,0.06)", mixBlendMode: "screen" }}
+            />
+
+            {/* Fade edges into page background */}
+            <div className="absolute inset-0 pointer-events-none" style={{
+              background: `
+                linear-gradient(to bottom,  #030408 0%, transparent 18%, transparent 72%, #030408 100%),
+                linear-gradient(to right,   #030408 0%, transparent 18%),
+                linear-gradient(to left,    #030408 0%, transparent 18%)
+              `
+            }} />
+
+            {/* Subtle accent glow behind figure */}
+            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              style={{ background: "radial-gradient(ellipse 60% 40% at 50% 40%, rgba(0,229,255,0.07) 0%, transparent 70%)" }}
+            />
+
+            {/* HUD corner brackets */}
+            <div className="absolute top-6 left-6 w-6 h-6 border-t-2 border-l-2 border-accent-primary opacity-60" />
+            <div className="absolute top-6 right-6 w-6 h-6 border-t-2 border-r-2 border-accent-primary opacity-60" />
+            <div className="absolute bottom-6 left-6 w-6 h-6 border-b-2 border-l-2 border-accent-primary opacity-60" />
+            <div className="absolute bottom-6 right-6 w-6 h-6 border-b-2 border-r-2 border-accent-primary opacity-60" />
+
+            {/* Identity tag */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-[10px] tracking-[0.3em] text-accent-primary opacity-50 uppercase whitespace-nowrap">
+              AK_54881 :: VERIFIED
+            </div>
           </motion.div>
 
           <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="flex flex-col gap-6">

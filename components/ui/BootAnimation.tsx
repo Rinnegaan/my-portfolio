@@ -262,7 +262,8 @@ function useBootAudio() {
 
 /* ─── Main Component ─────────────────────────────────────────── */
 export default function BootAnimation() {
-  const [visible, setVisible] = useState(true);
+  // null = not yet mounted (hidden during SSR), true = showing, false = done
+  const [visible, setVisible] = useState<boolean | null>(null);
   const [phase, setPhase] = useState(0);
   const [visibleLines, setVisibleLines] = useState<string[]>([]);
   const [progress, setProgress] = useState(0);
@@ -273,8 +274,14 @@ export default function BootAnimation() {
   const audio = useBootAudio();
   const lineTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // Always show on mount — runs on every page load/refresh
+  useEffect(() => {
+    setVisible(true);
+  }, []);
+
   /* ── Start audio on first click anywhere ── */
   useEffect(() => {
+    if (!visible) return;
     const startAudio = () => {
       if (!audioStarted) {
         audio.resumeCtx();
@@ -283,9 +290,10 @@ export default function BootAnimation() {
     };
     window.addEventListener("click", startAudio, { once: true });
     return () => window.removeEventListener("click", startAudio);
-  }, [audioStarted, audio]);
+  }, [audioStarted, audio, visible]);
 
   useEffect(() => {
+    if (!visible) return;
     let lineQueue: string[] = [];
 
     function scheduleLines(lines: string[], delay: number, cb: () => void) {
@@ -365,6 +373,8 @@ export default function BootAnimation() {
     if (line.startsWith(">>")) return "#94a3b8";
     return "#64748b";
   }
+
+  if (visible === null) return null;
 
   return (
     <AnimatePresence>
