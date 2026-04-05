@@ -42,7 +42,7 @@ export default function Hero() {
       
       {/* Background Parallax */}
       <div 
-        className="absolute inset-0 z-[-2] opacity-15"
+        className="absolute inset-0 z-[-2] opacity-15 hidden md:block"
         style={{ backgroundImage: "url('/fingerprint_hero.png')", backgroundSize: "cover", backgroundPosition: "center", filter: "contrast(1.2)" }}
       />
       
@@ -105,16 +105,16 @@ export default function Hero() {
         {/* Stats */}
         <motion.div 
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}
-          className="flex flex-wrap items-center gap-6 md:gap-10"
+          className="grid grid-cols-2 md:flex md:flex-wrap items-center gap-6 md:gap-10"
         >
           <StatBox num="50+" label="THM Rooms" />
-          <div className="w-[1px] h-8 bg-glass-border hidden sm:block" />
+          <div className="w-[1px] h-8 bg-glass-border hidden md:block" />
           <StatBox num="Top 15%" label="Global Rank" />
-          <div className="w-[1px] h-8 bg-glass-border hidden sm:block" />
+          <div className="w-[1px] h-8 bg-glass-border hidden md:block" />
           <StatBox num="8.4+" label="CGPA" />
-          <div className="w-[1px] h-8 bg-glass-border hidden sm:block" />
+          <div className="w-[1px] h-8 bg-glass-border hidden md:block" />
           <StatBox num="6+" label="Case Studies" />
-          <div className="w-[1px] h-8 bg-glass-border hidden sm:block" />
+          <div className="w-[1px] h-8 bg-glass-border hidden md:block" />
           <StatBox num="'A'" label="NCC Grade" />
         </motion.div>
 

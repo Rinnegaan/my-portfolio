@@ -22,7 +22,7 @@ export default function About() {
             initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="relative rounded-[14px] overflow-hidden border border-glass-border aspect-4/3 group"
           >
-            <img src="/investigation_about.png" alt="Forensic Investigation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src="/ayush_profile.jpg" alt="Ayush Kumar" className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#030408]/80"></div>
             {/* Viewfinder corners */}
             <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-accent-primary"></div>

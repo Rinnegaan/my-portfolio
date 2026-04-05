@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Rajdhani, Orbitron, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
-
+import BootAnimation from '@/components/ui/BootAnimation';
 const rajdhani = Rajdhani({ 
   subsets: ['latin'], 
   weight: ['400', '500', '600', '700'],
@@ -59,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${rajdhani.variable} ${orbitron.variable} ${jetbrains.variable} font-sans antialiased`}>
+        <BootAnimation />
         {children}
       </body>
     </html>

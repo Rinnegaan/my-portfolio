@@ -10,10 +10,10 @@ export default function SectionHeader({ tag, title, accent }: { tag: string, tit
       viewport={{ once: true, margin: "-100px" }}
       className="mb-12"
     >
-      <span className="inline-block font-mono text-xs tracking-[3px] text-slate-400 mb-3 uppercase">
+      <span className="block font-mono text-xs tracking-[3px] text-slate-400 mb-3 uppercase">
         {tag}
       </span>
-      <h2 className="font-heading text-4xl md:text-5xl font-bold relative inline-block pb-3">
+      <h2 className="block font-heading text-4xl md:text-5xl font-bold relative pb-3 w-fit">
         {title} <span className="text-accent-primary">{accent}</span>
         <span className="absolute bottom-0 left-0 w-2/5 h-[3px] bg-gradient-to-r from-accent-primary to-transparent rounded-full"></span>
       </h2>
