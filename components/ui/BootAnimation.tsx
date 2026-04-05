@@ -286,11 +286,6 @@ export default function BootAnimation() {
   }, [audioStarted, audio]);
 
   useEffect(() => {
-    if (sessionStorage.getItem("booted")) {
-      setVisible(false);
-      return;
-    }
-
     let lineQueue: string[] = [];
 
     function scheduleLines(lines: string[], delay: number, cb: () => void) {
@@ -315,7 +310,6 @@ export default function BootAnimation() {
         audio.playLaunchSweep();
         setTimeout(() => {
           audio.cleanup();
-          sessionStorage.setItem("booted", "1");
           setVisible(false);
         }, 900);
         return;
