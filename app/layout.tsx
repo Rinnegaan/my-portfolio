@@ -23,6 +23,32 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Ayush Kumar | Digital Forensics & Cybersecurity',
   description: 'Applying scientific principles and analytical reasoning to interpret forensic evidence and investigate digital and physical crime.',
+  keywords: [
+    'Ayush Kumar', 
+    'Digital Forensics', 
+    'Cybersecurity', 
+    'Forensic Science', 
+    'Parul University', 
+    'OSINT', 
+    'TryHackMe', 
+    'Information Security', 
+    'Cyber Investigator'
+  ],
+  authors: [{ name: 'Ayush Kumar' }],
+  creator: 'Ayush Kumar',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://ayush-portfolio.vercel.app', 
+    title: 'Ayush Kumar | Digital Forensics & Cybersecurity',
+    description: 'B.Sc. Forensic Science (Hons.) student specializing in digital forensics, OSINT, and cybercrime investigation.',
+    siteName: 'Ayush Kumar Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ayush Kumar | Digital Forensics & Cybersecurity',
+    description: 'Digital Forensics & Cybersecurity Portfolio by Ayush Kumar.',
+  },
 };
 
 export default function RootLayout({

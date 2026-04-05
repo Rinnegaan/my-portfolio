@@ -41,9 +41,7 @@ export default function Hero() {
     <section id="home" className="relative min-h-[100svh] flex items-center overflow-hidden pt-[72px]">
       
       {/* Background Parallax */}
-      <motion.div 
-        initial={{ y: 0 }}
-        style={{ y: 0 }}
+      <div 
         className="absolute inset-0 z-[-2] opacity-15"
         style={{ backgroundImage: "url('/fingerprint_hero.png')", backgroundSize: "cover", backgroundPosition: "center", filter: "contrast(1.2)" }}
       />

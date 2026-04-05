@@ -33,11 +33,14 @@
   }
 
   .glass-card {
-    @apply relative overflow-hidden rounded-[14px] border border-glass-border bg-glass-bg p-6 md:p-10 transition-all duration-300;
+    @apply relative overflow-hidden rounded-[14px] border bg-glass-bg p-6 md:p-10 transition-all duration-300;
+    border-color: var(--glass-border);
   }
   
   .glass-card:hover {
-    @apply border-accent-primary/50 shadow-[0_0_30px_var(--accent-glow),0_20px_40px_rgba(0,0,0,0.5)] -translate-y-1;
+    border-color: rgba(0, 229, 255, 0.5);
+    box-shadow: 0 0 30px var(--accent-glow), 0 20px 40px rgba(0,0,0,0.5);
+    transform: translateY(-4px);
   }
 
   .btn {
@@ -45,11 +48,28 @@
   }
 
   .btn-primary {
-    @apply bg-accent-primary/10 text-accent-primary border border-accent-primary hover:bg-accent-primary hover:text-background hover:shadow-[0_0_24px_rgba(0,229,255,0.5)];
+    @apply inline-flex items-center gap-2;
+    background-color: rgba(0, 229, 255, 0.1);
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-primary);
+    color: var(--background);
+    box-shadow: 0 0 24px rgba(0,229,255,0.5);
   }
 
   .btn-ghost {
-    @apply bg-transparent text-slate-400 border border-glass-border hover:border-accent-primary/50 hover:text-foreground;
+    @apply inline-flex items-center gap-2;
+    background-color: transparent;
+    color: #94a3b8;
+    border: 1px solid var(--glass-border);
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(0, 229, 255, 0.5);
+    color: var(--foreground);
   }
 }
 
