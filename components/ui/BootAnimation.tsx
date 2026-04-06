@@ -281,7 +281,6 @@ export default function BootAnimation() {
 
   /* ── Start audio on first click anywhere ── */
   useEffect(() => {
-    if (!visible) return;
     const startAudio = () => {
       if (!audioStarted) {
         audio.resumeCtx();
@@ -290,10 +289,9 @@ export default function BootAnimation() {
     };
     window.addEventListener("click", startAudio, { once: true });
     return () => window.removeEventListener("click", startAudio);
-  }, [audioStarted, audio, visible]);
+  }, [audioStarted, audio]);
 
   useEffect(() => {
-    if (!visible) return;
     let lineQueue: string[] = [];
 
     function scheduleLines(lines: string[], delay: number, cb: () => void) {
