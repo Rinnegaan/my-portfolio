@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User, Code, Shield, FolderGit2, Mail as MailIcon } from "lucide-react";
+import { LimelightNav } from "./limelight-nav";
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,23 +35,21 @@ export default function NavBar() {
           <span className="text-accent-primary">[</span>AK<span className="text-accent-primary">]</span>
         </a>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-7 font-mono text-sm">
-          {links.map((link) => (
-            <li key={link.name}>
-              <a href={link.href} className="text-slate-400 hover:text-accent-primary transition-colors relative group">
-                {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            </li>
-          ))}
-          <li>
-            <a href="#contact" className="text-accent-primary hover:text-white transition-colors relative group">
-              ~/_contact
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
-        </ul>
+        {/* Desktop Links (Limelight Nav) */}
+        <div className="hidden md:block">
+          <LimelightNav 
+            items={[
+              { id: 'about', icon: <User />, label: 'recon_about', onClick: () => { document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' }) } },
+              { id: 'skills', icon: <Code />, label: 'util_skills', onClick: () => { document.querySelector('#skills')?.scrollIntoView({ behavior: 'smooth' }) } },
+              { id: 'cyber', icon: <Shield />, label: 'cyber_intel', onClick: () => { document.querySelector('#cyber')?.scrollIntoView({ behavior: 'smooth' }) } },
+              { id: 'projects', icon: <FolderGit2 />, label: 'case_files', onClick: () => { document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }) } },
+              { id: 'contact', icon: <MailIcon />, label: '_contact', onClick: () => { document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) } },
+            ]}
+            className="bg-transparent border-none outline-none shadow-none"
+            iconClassName="text-slate-400 group-hover:text-accent-primary"
+            limelightClassName="bg-accent-primary shadow-[0_30px_15px_rgba(0,229,255,0.4)]"
+          />
+        </div>
 
         {/* Mobile Toggle */}
         <button 
