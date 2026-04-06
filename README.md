@@ -1,94 +1,89 @@
-# Ayush Kumar — Digital Forensics & Cybersecurity Portfolio
+# 🕵️‍♂️ Ayush Kumar | Digital Forensics & Cybersecurity Portfolio
 
 > *"Applying scientific principles and analytical reasoning to interpret forensic evidence and investigate digital and physical crime."*
 
-A modern, cyberpunk-themed portfolio website for a B.Sc. Forensic Science (Hons.) student at Parul University — built with a cyber-investigator aesthetic.
+Welcome to my personal portfolio! I am a 3rd-year **B.Sc. Forensic Science (Hons.)** student at Parul University, blending scientific rigor with raw cyber-investigative skills. My primary focus lies in digital forensics, OSINT, and cybercrime investigation.
+
+To reflect my passion, I built this portfolio with a strong **"cyber-investigator" aesthetic** — complete with a cinematic BIOS boot sequence, procedural audio, glassmorphism, and holographic 3D interactions.
+
+🌐 **[Live Site on Vercel](https://ayush-portfolio.vercel.app/)**
 
 ---
 
-## 🔍 Live Site
+## 🚀 Features & Aesthetics
 
-**[ayush-portfolio.vercel.app](https://ayush-portfolio.vercel.app)**
-
----
-
-## 🧰 Tech Stack
-
-| Technology | Purpose |
-|---|---|
-| **Next.js 15** | React framework with App Router |
-| **TypeScript** | Type safety |
-| **Tailwind CSS 3** | Utility-first styling |
-| **Framer Motion 11** | Animations & transitions |
-| **Lucide React** | Icons |
-| **Vercel** | Deployment platform |
+This isn't your average portfolio. I've designed it to feel like an interactive cyber terminal:
+- **Cinematic Boot Sequence:** A multi-phase forensic boot animation (BIOS POST, Kernel Init, Authentication) with procedurally generated Web Audio API sound effects (terminal clicks, hums, sweep tones).
+- **Holographic TryHackMe Card:** A custom 3D element mapping mouse coordinates to synthesize a parallax tilt effect, capped off with a cyan holographic glare.
+- **Limelight Navigation:** An interactive, icon-guided header tracking exact module positioning with smooth sliding spotlights.
+- **Glassmorphism UI:** Frosted glass panels, CRT scanlines, terminal text glitches, and ambient glowing borders.
+- **Immersive Sections:** From the terminal-style typing hero to interactive, floating project cards.
 
 ---
 
-## ✨ Features
+## 🧰 Tech Stack Built On
 
-- Glassmorphism card UI with ambient glow effects
-- Terminal-style typewriter animation in hero
-- Mouse-tracked radial gradient spotlight on skill/project cards
-- Scroll-triggered reveal animations on every section
-- Fully mobile-responsive design
-- Acrylic (frosted glass) navigation bar
-- Open Graph / Twitter card metadata for social sharing
-- SEO optimised with sitemap and robots.txt
+| Technology | Role |
+| :--- | :--- |
+| **Next.js 15 (App Router)** | Core framework providing lighting fast React Server Components. |
+| **TypeScript** | Ensuring strict, reliable type-safety across all architectures. |
+| **Tailwind CSS 3** | Quick, adaptive, and highly flexible utility styling. |
+| **Framer Motion 11** | Powering the complex section reveals and element floating animations. |
+| **Lucide-React** | Supplying clean, scalable SVG iconography. |
 
 ---
 
-## 📁 Project Structure
+## 📁 System Architecture
 
-```
+```text
 app/
-  layout.tsx        # Root layout with fonts, metadata & OG tags
-  page.tsx          # Main single-page entry
-  globals.css       # Design tokens and component styles
-  icon.png          # App favicon (auto-detected by Next.js)
-  sitemap.ts        # Auto-generated sitemap for SEO
+ ├── layout.tsx         # Root container (handles fonts, meta tags, boot animation)
+ ├── page.tsx           # Assembly of all terminal sections
+ ├── globals.css        # The "Specter DFIR" design system, variables, and CRT scanlines
+ └── sitemap.ts         # Automated SEO indexing route
 components/
-  sections/         # Hero, About, Skills, CyberProfile, Projects, Contact, Footer
-  ui/               # NavBar, SectionHeader
+ ├── sections/          # Hero, About, Skills, CyberProfile, Projects, Contact, Footer
+ ├── ui/
+ │   ├── BootAnimation.tsx   # Procedural Audio & Cinematic Sequence
+ │   ├── limelight-nav.tsx   # Sliding Highlight Toolbar
+ │   ├── holographic-card.tsx# 3D Tilt Wrapper
+ │   └── social-icons.tsx    # Interactive Connect Links
 public/
-  fingerprint_hero.png
-  investigation_about.png
+ ├── ayush_profile.jpg       # Blended agent photo
+ └── hero_bg.png             # The fingerprint terminal backing
 ```
 
 ---
 
-## 🚀 Running Locally
+## 💻 Running the Environment Locally
+
+Want to boot up the terminal on your own machine?
 
 ```bash
-# Install dependencies
+# 1. Clone & Enter Directory
+git clone https://github.com/Rinnegaan/portfolio.git
+cd portfolio
+
+# 2. Install Packages
 npm install
 
-# Start development server
+# 3. Mount Development Server
 npm run dev
 ```
 
-Then open **http://localhost:3000**
+Navigate to `http://localhost:3000` to initiate the session!
 
 ---
 
-## 📦 Deployment
+## 📬 Open Channels (Contact)
 
-This project is deployed on **Vercel** with zero configuration — simply connect your GitHub repository to Vercel and every `git push` to `main` triggers an automatic deployment.
+Looking to collaborate on cybersecurity puzzles, OSINT challenges, or intern opportunities? My lines are open.
 
-```bash
-# Build for production (optional - Vercel handles this automatically)
-npm run build
-```
-
----
-
-## 📬 Contact
-
-- **Email:** ayushkr54881@gmail.com
+- **Email:** [ayushkr54881@gmail.com](mailto:ayushkr54881@gmail.com)
 - **LinkedIn:** [ayush-kumar-918a3b354](https://www.linkedin.com/in/ayush-kumar-918a3b354)
+- **TryHackMe:** [ayushkr54881](https://tryhackme.com/p/ayushkr54881) (Top 15% Global)
 - **GitHub:** [Rinnegaan](https://github.com/Rinnegaan)
-- **TryHackMe:** [ayushkr54881](https://tryhackme.com/p/ayushkr54881)
 
 ---
 
-*© 2026 Ayush Kumar. All access monitored.*
+*System Authored by Ayush Kumar | 2026*
