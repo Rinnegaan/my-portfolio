@@ -12,17 +12,18 @@ export default function CyberProfile() {
         
         <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 items-start">
           
-          <motion.div 
+          <motion.a 
+            href="https://tryhackme.com/p/ayushkr54881" target="_blank" rel="noopener noreferrer"
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="glass-card flex flex-col gap-8"
+            className="glass-card flex flex-col gap-8 group/card block cursor-pointer"
           >
             <div className="flex flex-wrap items-center gap-6">
               <div className="text-5xl text-accent-primary"><UserSearch /></div>
               <div>
                 <h3 className="text-2xl font-bold font-heading">TryHackMe</h3>
-                <a href="https://tryhackme.com/p/ayushkr54881" target="_blank" rel="noopener noreferrer" className="font-mono text-accent-primary hover:underline">
+                <span className="font-mono text-accent-primary group-hover/card:underline">
                   ayushkr54881
-                </a>
+                </span>
               </div>
               <div className="ml-auto inline-flex items-center gap-2 px-3 py-1 bg-accent-primary/10 border border-glass-border rounded-full font-mono text-xs text-accent-primary">
                 <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse"></span> ACTIVE
@@ -56,7 +57,7 @@ export default function CyberProfile() {
                 <FocusTag icon={<MonitorSmartphone size={12}/>} text="System Sec" />
               </div>
             </div>
-          </motion.div>
+          </motion.a>
 
           <div className="flex flex-col gap-4">
             <Achievement delay={0.1} icon={<Award/>} title="Forensic Fest — Pramaan" desc="Certificate of Appreciation, 2025 & 2026" />
